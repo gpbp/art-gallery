@@ -42,7 +42,7 @@ Congratulations! You've selected an excellent way to secure your JHipster applic
 To log in to your app, you'll need to have [Keycloak](https://keycloak.org) up and running. The JHipster Team has created a Docker container for you that has the default users and roles. Start Keycloak using the following command.
 
 ```
-docker-compose -f src/main/docker/keycloak.yml up
+docker-compose -f src/main/docker/keycloak.yml up -d
 ```
 
 The security settings in `src/main/resources/config/application.yml` are configured for this image.
