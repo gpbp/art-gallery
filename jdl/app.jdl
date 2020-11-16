@@ -1,0 +1,13 @@
+entity Painting {
+    name String
+    author String
+    creationDate ZonedDateTime
+    price Double
+}
+
+dto Painting with mapstruct
+
+paginate Painting with pagination
+
+service Painting with serviceClass
+service Painting with serviceImpl
