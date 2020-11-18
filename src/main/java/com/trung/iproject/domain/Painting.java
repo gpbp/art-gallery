@@ -31,6 +31,9 @@ public class Painting implements Serializable {
     @Column(name = "price")
     private Double price;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -91,6 +94,19 @@ public class Painting implements Serializable {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public Painting imageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+        return this;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -118,6 +134,7 @@ public class Painting implements Serializable {
             ", author='" + getAuthor() + "'" +
             ", creationDate='" + getCreationDate() + "'" +
             ", price=" + getPrice() +
+            ", imageUrl='" + getImageUrl() + "'" +
             "}";
     }
 }

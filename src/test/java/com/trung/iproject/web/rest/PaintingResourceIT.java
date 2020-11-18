@@ -51,6 +51,9 @@ public class PaintingResourceIT {
     private static final Double DEFAULT_PRICE = 1D;
     private static final Double UPDATED_PRICE = 2D;
 
+    private static final String DEFAULT_IMAGE_URL = "AAAAAAAAAA";
+    private static final String UPDATED_IMAGE_URL = "BBBBBBBBBB";
+
     @Autowired
     private PaintingRepository paintingRepository;
 
@@ -79,7 +82,8 @@ public class PaintingResourceIT {
             .name(DEFAULT_NAME)
             .author(DEFAULT_AUTHOR)
             .creationDate(DEFAULT_CREATION_DATE)
-            .price(DEFAULT_PRICE);
+            .price(DEFAULT_PRICE)
+            .imageUrl(DEFAULT_IMAGE_URL);
         return painting;
     }
     /**
@@ -93,7 +97,8 @@ public class PaintingResourceIT {
             .name(UPDATED_NAME)
             .author(UPDATED_AUTHOR)
             .creationDate(UPDATED_CREATION_DATE)
-            .price(UPDATED_PRICE);
+            .price(UPDATED_PRICE)
+            .imageUrl(UPDATED_IMAGE_URL);
         return painting;
     }
 
@@ -121,6 +126,7 @@ public class PaintingResourceIT {
         assertThat(testPainting.getAuthor()).isEqualTo(DEFAULT_AUTHOR);
         assertThat(testPainting.getCreationDate()).isEqualTo(DEFAULT_CREATION_DATE);
         assertThat(testPainting.getPrice()).isEqualTo(DEFAULT_PRICE);
+        assertThat(testPainting.getImageUrl()).isEqualTo(DEFAULT_IMAGE_URL);
     }
 
     @Test
@@ -158,7 +164,8 @@ public class PaintingResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].author").value(hasItem(DEFAULT_AUTHOR)))
             .andExpect(jsonPath("$.[*].creationDate").value(hasItem(sameInstant(DEFAULT_CREATION_DATE))))
-            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.doubleValue())));
+            .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.doubleValue())))
+            .andExpect(jsonPath("$.[*].imageUrl").value(hasItem(DEFAULT_IMAGE_URL)));
     }
     
     @Test
@@ -175,7 +182,8 @@ public class PaintingResourceIT {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.author").value(DEFAULT_AUTHOR))
             .andExpect(jsonPath("$.creationDate").value(sameInstant(DEFAULT_CREATION_DATE)))
-            .andExpect(jsonPath("$.price").value(DEFAULT_PRICE.doubleValue()));
+            .andExpect(jsonPath("$.price").value(DEFAULT_PRICE.doubleValue()))
+            .andExpect(jsonPath("$.imageUrl").value(DEFAULT_IMAGE_URL));
     }
     @Test
     @Transactional
@@ -201,7 +209,8 @@ public class PaintingResourceIT {
             .name(UPDATED_NAME)
             .author(UPDATED_AUTHOR)
             .creationDate(UPDATED_CREATION_DATE)
-            .price(UPDATED_PRICE);
+            .price(UPDATED_PRICE)
+            .imageUrl(UPDATED_IMAGE_URL);
         PaintingDTO paintingDTO = paintingMapper.toDto(updatedPainting);
 
         restPaintingMockMvc.perform(put("/api/paintings").with(csrf())
@@ -217,6 +226,7 @@ public class PaintingResourceIT {
         assertThat(testPainting.getAuthor()).isEqualTo(UPDATED_AUTHOR);
         assertThat(testPainting.getCreationDate()).isEqualTo(UPDATED_CREATION_DATE);
         assertThat(testPainting.getPrice()).isEqualTo(UPDATED_PRICE);
+        assertThat(testPainting.getImageUrl()).isEqualTo(UPDATED_IMAGE_URL);
     }
 
     @Test

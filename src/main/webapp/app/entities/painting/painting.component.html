@@ -27,6 +27,7 @@
                     <th scope="col"  jhiSortBy="author"><span>Author</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="creationDate"><span>Creation Date</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="price"><span>Price</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageUrl"><span>Image Url</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -37,6 +38,7 @@
                     <td>{{ painting.author }}</td>
                     <td>{{ painting.creationDate | date:'medium' }}</td>
                     <td>{{ painting.price }}</td>
+                    <td>{{ painting.imageUrl }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

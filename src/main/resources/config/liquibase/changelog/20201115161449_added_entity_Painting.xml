@@ -28,6 +28,9 @@
             <column name="price" type="double">
                 <constraints nullable="true" />
             </column>
+            <column name="image_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="painting" columnName="creation_date" columnDataType="datetime"/>
@@ -56,6 +59,7 @@
             <column name="author" type="string"/>
             <column name="creation_date" type="datetime"/>
             <column name="price" type="numeric"/>
+            <column name="image_url" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

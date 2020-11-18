@@ -23,6 +23,7 @@ export class PaintingUpdateComponent implements OnInit {
     author: [],
     creationDate: [],
     price: [],
+    imageUrl: [],
   });
 
   constructor(protected paintingService: PaintingService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
@@ -45,6 +46,7 @@ export class PaintingUpdateComponent implements OnInit {
       author: painting.author,
       creationDate: painting.creationDate ? painting.creationDate.format(DATE_TIME_FORMAT) : null,
       price: painting.price,
+      imageUrl: painting.imageUrl,
     });
   }
 
@@ -72,6 +74,7 @@ export class PaintingUpdateComponent implements OnInit {
         ? moment(this.editForm.get(['creationDate'])!.value, DATE_TIME_FORMAT)
         : undefined,
       price: this.editForm.get(['price'])!.value,
+      imageUrl: this.editForm.get(['imageUrl'])!.value,
     };
   }
 

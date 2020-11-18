@@ -18,6 +18,8 @@ public class PaintingDTO implements Serializable {
 
     private Double price;
 
+    private String imageUrl;
+
     
     public Long getId() {
         return id;
@@ -59,6 +61,14 @@ public class PaintingDTO implements Serializable {
         this.price = price;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -85,6 +95,7 @@ public class PaintingDTO implements Serializable {
             ", author='" + getAuthor() + "'" +
             ", creationDate='" + getCreationDate() + "'" +
             ", price=" + getPrice() +
+            ", imageUrl='" + getImageUrl() + "'" +
             "}";
     }
 }

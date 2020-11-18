@@ -3,6 +3,7 @@ entity Painting {
     author String
     creationDate ZonedDateTime
     price Double
+    imageUrl String
 }
 
 dto Painting with mapstruct

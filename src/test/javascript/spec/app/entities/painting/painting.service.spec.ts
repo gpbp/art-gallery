@@ -24,7 +24,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Painting(0, 'AAAAAAA', 'AAAAAAA', currentDate, 0);
+      elemDefault = new Painting(0, 'AAAAAAA', 'AAAAAAA', currentDate, 0, 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -73,6 +73,7 @@ describe('Service Tests', () => {
             author: 'BBBBBB',
             creationDate: currentDate.format(DATE_TIME_FORMAT),
             price: 1,
+            imageUrl: 'BBBBBB',
           },
           elemDefault
         );
@@ -98,6 +99,7 @@ describe('Service Tests', () => {
             author: 'BBBBBB',
             creationDate: currentDate.format(DATE_TIME_FORMAT),
             price: 1,
+            imageUrl: 'BBBBBB',
           },
           elemDefault
         );
